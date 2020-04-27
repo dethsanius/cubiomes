@@ -1,4 +1,6 @@
 find_compactbiomes
 find_quadhuts
+searcher
+*.o
 .cproject
 .project

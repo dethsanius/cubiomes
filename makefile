@@ -31,7 +31,7 @@ find_compactbiomes: find_compactbiomes.o layers.o generator.o finders.o
 find_compactbiomes.o: find_compactbiomes.c
 	$(CC) -c $(CFLAGS) $<
 
-find_quadhuts: find_quadhuts.o layers.o generator.o finders.o 
+find_quadhuts: find_quadhuts.o layers.o generator.o finders.o
 	$(CC) -o $@ $^ $(LDFLAGS)
 
 find_quadhuts.o: find_quadhuts.c
@@ -51,6 +51,18 @@ layers.o: layers.c layers.h
 	$(CC) -c $(CFLAGS) $<
 
 util.o: util.c util.h
+	$(CC) -c $(CFLAGS) $<
+
+searcher: searcher.o layers.o generator.o finders.o
+	$(CC) -o $@ $^ $(LDFLAGS)
+
+searcher.o: searcher.c
+	$(CC) -c $(CFLAGS) $<
+
+god: god.o layers.o generator.o finders.o
+	$(CC) -o $@ $^ $(LDFLAGS)
+
+god.o: god.c
 	$(CC) -c $(CFLAGS) $<
 
 clean:
