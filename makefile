@@ -59,12 +59,12 @@ searcher: searcher.o layers.o generator.o finders.o
 searcher.o: searcher.c
 	$(CC) -c $(CFLAGS) $<
 
-god: god.o layers.o generator.o finders.o
+god: Gods_seedfinder.o layers.o generator.o finders.o
 	$(CC) -o $@ $^ $(LDFLAGS)
 
-god.o: god.c
+Gods_seedfinder.o: Gods_seedfinder.c
 	$(CC) -c $(CFLAGS) $<
 
 clean:
-	$(RM) *.o
+	$(RM) *.o god
 

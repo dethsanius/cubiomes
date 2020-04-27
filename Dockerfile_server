@@ -1,0 +1,10 @@
+FROM nginx:latest
+
+RUN mkdir /data && \
+  apt-get update && \
+  apt-get install -y libx11-dev build-essential tmux
+
+WORKDIR /data
+COPY ./* /data/
+
+CMD ["nginx", "-g", "daemon off;"]
